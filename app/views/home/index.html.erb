@@ -1,0 +1,8 @@
+<% cache('landing_page') do %>
+  <% content_for :content, flush: true do %>
+    <h1>Jarred Baker</h1>
+    <h1>Event booking</h1>
+  <% end %>
+
+  <%= render 'shared/center_layout' %>
+<% end %>

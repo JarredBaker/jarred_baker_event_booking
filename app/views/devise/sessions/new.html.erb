@@ -1,0 +1,29 @@
+<% content_for :content, flush: true do %>
+  <div class="p-14 shadow-md rounded-2xl bg-slate-900 text-white w-[calc(100vw/3)]">
+    <h2 class="text-3xl font-medium">Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email, class: 'input-label' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, class: 'input-label' %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
+      </div>
+
+      <div class="my-4">
+        <div class="actions flex justify-between w-100 text-center">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Sign up", new_registration_path(resource_name), class: 'button-secondary' %><br />
+          <% end %>
+          <%= f.submit "Log in", class: 'button-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<%= render 'shared/center_layout' %>

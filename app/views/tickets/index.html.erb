@@ -1,0 +1,15 @@
+<div class="p-8">
+  <div class="grid gap-4 grid-cols-4 mt-4 w-100">
+    <% @tickets.each do |ticket| %>
+      <div class="card break-all">
+        <p class="text-2xl pb-4 font-medium"><%= ticket.event.name %></p>
+        <p><%= ticket.event.description %></p>
+        <p><%= ticket.event.date.in_time_zone(Time.zone).strftime('%B %d, %Y %I:%M %p') %></p>
+
+        <div class="mt-4 w-100 flex justify-items-end">
+          <%= link_to "View Event", event_path(ticket.event), class: 'button-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

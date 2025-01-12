@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JarredBakerEventBooking</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body class="bg-slate-800">
+    <% if user_signed_in? %>
+      <%= render 'shared/authed_nav' %>
+    <% else %>
+      <%= render 'shared/unauthed_nav' %>
+    <% end %>
+    <div class="absolute top-20 right-2">
+      <div id="ticket-status" data-user-id="<%= current_user.id %>"></div>
+      <div id="ticket-status-message"></div>
+
+      <% if notice.present? %>
+        <p class="notice alert-info"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

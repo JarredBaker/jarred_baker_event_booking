@@ -1,0 +1,20 @@
+<% cache @event do %>
+  <div class="p-16">
+    <div class="card break-all">
+      <p class="text-2xl pb-4 font-medium"><%= @event.name %></p>
+      <p><%= @event.description %></p>
+      <p>Tickets remaining: <%= @event.tickets_available %></p>
+
+      <h1>Order</h1>
+      <%= form_tag tickets_url do %>
+        <%= hidden_field_tag :event_id, @event.id %>
+        <div>
+          <%= label_tag :ticket_count, "Amount", class: 'input-label' %>
+          <%= number_field_tag :ticket_count, 1, class: 'input', min: 1 %>
+        </div>
+
+        <%= submit_tag 'Order', class: 'button-primary mt-4' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

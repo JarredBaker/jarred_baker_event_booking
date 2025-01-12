@@ -1,0 +1,8 @@
+<% content_for :content, flush: true do %>
+  <div class="p-14 shadow-md rounded-2xl bg-slate-900 text-white w-[calc(100vw/3)]">
+    <h2 class="text-3xl font-medium">New event</h2>
+    <%= render 'form', event: @event %>
+  </div>
+<% end %>
+
+<%= render 'shared/center_layout' %>

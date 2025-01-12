@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1, h2, h3, h4, h5, small, em, p {
+        @apply text-white
+    }
+
+    .input {
+        @apply
+        border
+        text-sm
+        rounded-lg
+        focus:ring-blue-500
+        focus:border-blue-500
+        block w-full
+        p-2.5
+        bg-gray-700
+        border-gray-600
+        placeholder-gray-400
+        text-white
+    }
+
+    .input-label {
+        @apply block
+        text-sm
+        font-medium
+        text-white
+        my-2
+    }
+
+    .button-primary {
+        @apply text-white
+        focus:ring-4
+        font-medium
+        rounded-lg
+        text-sm
+        px-5
+        py-2.5
+        me-2
+        bg-blue-600
+        hover:bg-blue-700
+        focus:ring-blue-800
+    }
+
+    .button-secondary {
+        @apply text-white
+        focus:outline-none
+        focus:ring-4
+        font-medium
+        rounded-lg
+        text-sm
+        px-5
+        py-2.5
+        me-2
+        bg-gray-800
+        hover:bg-gray-700
+        focus:ring-gray-700
+        border-gray-700
+    }
+
+    .alert-danger {
+        @apply p-4 mb-4 text-sm rounded-lg bg-gray-800 text-red-400
+    }
+
+    .alert-info {
+        @apply p-4 mb-4 text-sm rounded-lg bg-slate-900 text-blue-400
+    }
+
+    .card {
+        @apply block max-w-sm p-6 border rounded-lg shadow bg-gray-800 border-gray-700 hover:bg-gray-700
+    }
+}
