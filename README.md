@@ -56,6 +56,13 @@ Additional details:
 - [x] Performance focused. 
 - [x] Specs and best practices. 
 
+## Performance and concurrency solution breakdown. 
+
+I've added a SQl level thread lock and place the booking system into a transaction block. However, if there is a spike and the request processing time is slow the HTTP request will lag. 
+Because of this I've moved it into a service object and called it through a background job. 
+
+With those two developments we needed a way to notify the user that the booking was processed. I added a Websocket connection which notifies the user once the job has finished with the result.
+
 ## Models
 ### User
 Devise user model
