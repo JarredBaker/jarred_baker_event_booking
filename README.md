@@ -1,5 +1,12 @@
 # jarred_baker_event_booking
 
+### Breakdown demo video of the readme and TDD: 
+
+https://github.com/user-attachments/assets/e92301c8-dc5b-409a-aae9-65d525d9a80e
+
+### Demo video of the applicaiton: 
+
+
 ### Getting started
 
 ```bash
