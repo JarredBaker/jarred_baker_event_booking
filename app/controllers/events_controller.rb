@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   def index
     return @events.all unless Rails.application.config.cache_classes && Rails.env.development?
     @events = Rails.cache.fetch("events/index", expires_in: 12.hours) do
-      Event.all.to_a
+      Event.includes(:location).to_a
     end
   end
 
@@ -40,7 +40,10 @@ class EventsController < ApplicationController
       :name,
       :description,
       :date,
-      :tickets_available
+      :tickets_available,
+      location_attributes: [
+        :address
+      ]
     )
   end
 end

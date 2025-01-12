@@ -1,7 +1,7 @@
 class Location < ApplicationRecord
   belongs_to :locatable, polymorphic: true
 
-  validates :address, :created_at, :updated_at, :locatable_id, :locatable_type, presence: true
+  validates :address, presence: true
 
   # Geocoding
   geocoded_by :address
