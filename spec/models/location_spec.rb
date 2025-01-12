@@ -46,13 +46,12 @@ RSpec.describe Location, type: :model do
       original_latitude = location.latitude
       original_longitude = location.longitude
 
-      location.update(address: location.address) # Update without changing address
+      location.update(address: location.address)
       expect(location.latitude).to eq(original_latitude)
       expect(location.longitude).to eq(original_longitude)
     end
   end
 
-  # Custom methods (if applicable)
   describe 'custom methods' do
     let(:location) { build(:location, latitude: 37.4224764, longitude: -122.0842499) }
 

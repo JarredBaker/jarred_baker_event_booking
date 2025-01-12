@@ -3,15 +3,28 @@
 ### Getting started
 
 ```bash
+  git clone https://github.com/JarredBaker/jarred_baker_event_booking.git
   cd jarred_baker_event_booking
+  ```
+##### Run the following command to generate a new `config/master.key`:
+```bash
+  rails credentials:edit
 ```
 ```bash
-  bin/rails db:create
+  bundle install
+  yarn install
+  rails db:setup
 ```
 
 ##### Enable caching in development
 ```bash
 bin/rails dev:cache
+```
+
+##### Run the application. 
+
+```bash
+ bin/dev
 ```
 
 ## Please note
@@ -56,8 +69,9 @@ Location model. Separate as we can re-use this across the site.
 ### Tickets
 Ticket. References user and event.
 
-<img width="824" alt="Screenshot 2025-01-12 at 1 54 45 pm" src="https://github.com/user-attachments/assets/ccc69406-1db8-4b75-b6b6-c219b294aa8e" />
+## DB Relationship diagram:
 
+<img width="824" alt="Screenshot 2025-01-12 at 1 54 45 pm" src="https://github.com/user-attachments/assets/ccc69406-1db8-4b75-b6b6-c219b294aa8e" />
 
 ## Performance: 
 #### Indexing: 

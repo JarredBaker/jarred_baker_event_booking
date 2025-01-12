@@ -30,8 +30,8 @@ RSpec.describe User, type: :model do
 
   # Associations
   describe 'associations' do
-    # it { should have_many(:events).dependent(:destroy) }
-    # it { should have_many(:tickets).dependent(:destroy) }
+    it { should have_many(:events).dependent(:destroy) }
+    it { should have_many(:tickets).dependent(:destroy) }
   end
 
   # Validations
@@ -44,20 +44,4 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:password) }
     it { should validate_length_of(:password).is_at_least(6) }
   end
-
-  # Custom methods (if applicable)
-  # describe 'custom methods' do
-  #   let(:user) { create(:user) }
-  #
-  #   describe '#admin?' do
-  #     it 'returns true if the user is an admin' do
-  #       admin_user = create(:user, admin: true)
-  #       expect(admin_user.admin?).to eq(true)
-  #     end
-  #
-  #     it 'returns false if the user is not an admin' do
-  #       expect(user.admin?).to eq(false)
-  #     end
-  #   end
-  # end
 end

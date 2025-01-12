@@ -3,7 +3,7 @@ require 'rails_helper'
 # bundle exec rspec ./spec/services/ticket_booking_service_spec.rb
 
 RSpec.describe TicketBookingService, type: :service do
-  let!(:event) { create(:event, tickets_available: 10) }
+  let(:event) { create(:event, tickets_available: 10) }
   let(:user1) { create(:user) }
   let(:user2) { create(:user) }
 
@@ -39,7 +39,8 @@ RSpec.describe TicketBookingService, type: :service do
 
         # Ensure the total tickets booked do not exceed the available tickets
         expect(event.reload.tickets_available).to be == 4
-        expect(event.tickets.count).to eq(6) # Total tickets created
+        # Total tickets created
+        expect(event.tickets.count).to eq(6)
         expect(event.tickets.where(user_id: user1.id).count).to be <= 6
         expect(event.tickets.where(user_id: user2.id).count).to be <= 6
 

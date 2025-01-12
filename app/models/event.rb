@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_one :location, as: :locatable, dependent: :destroy
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 
   validates :name, :date, :tickets_available, presence: true
   validates :tickets_available, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
