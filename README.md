@@ -6,6 +6,7 @@ https://github.com/user-attachments/assets/e92301c8-dc5b-409a-aae9-65d525d9a80e
 
 ### Demo video of the applicaiton: 
 
+https://github.com/user-attachments/assets/5ca490f2-2113-4043-8c52-0dd4709803dc
 
 ### Getting started
 
