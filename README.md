@@ -30,49 +30,45 @@ I've set the following so that caching works in development. If you want to make
 
 Build a tread safe event booking system that's performance focused.
 
-## Models
+## Features: 
 
+- [x] Authentication: Register, Login, Logout.
+- [x] Events: Create, Index all, Index own. 
+- [x] Tickets: Create, Index own. (Constraint: Can book multiple but not more than the allocated amount)
+
+Additional details: 
+
+- [x] Caching must be implemented. 
+- [x] Ticket booking must be thread safe. 
+- [x] Performance focused. 
+- [x] Specs and best practices. 
+
+## Models
 ### User
 Devise user model
 
 ### Event
-Event model
+Event model.
 
 ### Location
 Location model. Separate as we can re-use this across the site.
 
 ### Tickets
-Ticket
+Ticket. References user and event.
 
-### Migrations:
-```ruby
-# Events
-def change
-  create_table :events, id: :uuid do |t|
-    t.string :name, null: false, index: true
-    t.text :description
-    t.datetime :date, null: false, index: true
-    t.integer :tickets_available, default: 0, null: false
-    t.references :user, foreign_key: true, null: false, type: :uuid
-
-    t.timestamps
-  end
-
-  add_index :events, [:user_id, :date]
-end
-```
-
+![Screenshot 2025-01-12 at 1.51.05 pm.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F24%2F84cdx9fx2fnfyptzv5gr8ypc0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_vs8J8O%2FScreenshot%202025-01-12%20at%201.51.05%E2%80%AFpm.png)
 
 ## Performance: 
 #### Indexing: 
 - [x] Database indexes for fast querying.
 
 #### Background job processing: 
-- [x] If the concurrency is causing slow processing times have the bookings in a background thread will speed up the HTTP request and the users time. 
+- [x] If the concurrency is causing slow processing times; we have the bookings in a background thread which will speed up the HTTP request and the users time. 
 
 #### Caching
 - [x] Fragment caching for fast HTML load time. 
-- [x] Controller caching and invalidation.
+- [x] Controller caching
+- [x] IMPORTANT: I excluded caching on the personal event view and the tickets view as caching can bypass security (CanCanCan) and individual caching will bloat the caching server.
 
 #### Concurrency:
 - [x] Transaction blocks and SQL level locking.
