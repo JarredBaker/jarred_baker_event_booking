@@ -56,7 +56,8 @@ Location model. Separate as we can re-use this across the site.
 ### Tickets
 Ticket. References user and event.
 
-![Screenshot 2025-01-12 at 1.51.05 pm.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F24%2F84cdx9fx2fnfyptzv5gr8ypc0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_vs8J8O%2FScreenshot%202025-01-12%20at%201.51.05%E2%80%AFpm.png)
+<img width="824" alt="Screenshot 2025-01-12 at 1 54 45 pm" src="https://github.com/user-attachments/assets/ccc69406-1db8-4b75-b6b6-c219b294aa8e" />
+
 
 ## Performance: 
 #### Indexing: 
