@@ -2,11 +2,7 @@ class TicketsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-  def index
-    # @tickets = Rails.cache.fetch("tickets/index", expires_in: 12.hours) do
-    #   Ticket.includes(:event, :user).to_a
-    # end
-  end
+  def index; end
 
   def create
     TicketBookingJob.perform_later(create_params[:event_id], current_user.id, params[:ticket_count])

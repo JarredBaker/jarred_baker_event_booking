@@ -17,8 +17,10 @@
       <%= render 'shared/unauthed_nav' %>
     <% end %>
     <div class="absolute top-20 right-2">
-      <div id="ticket-status" data-user-id="<%= current_user.id %>"></div>
-      <div id="ticket-status-message"></div>
+      <%# if user_signed_in? %>
+        <div id="ticket-status" data-user-id="<%= user_signed_in? ? current_user.id : '' %>"></div>
+        <div id="ticket-status-message"></div>
+      <%# end %>
 
       <% if notice.present? %>
         <p class="notice alert-info"><%= notice %></p>

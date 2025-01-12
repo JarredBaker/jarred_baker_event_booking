@@ -3,8 +3,9 @@ class EventsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    return @events.all unless Rails.application.config.cache_classes && Rails.env.development?
     @events = Rails.cache.fetch("events/index", expires_in: 12.hours) do
-      Event.includes(:tickets).to_a
+      Event.all.to_a
     end
   end
 

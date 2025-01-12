@@ -7,7 +7,7 @@ Rails.application.configure do
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   # TODO: If you want to change the code, set the below value to false.
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -72,4 +72,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_controller.perform_caching = true
   config.action_controller.enable_fragment_cache_logging = true
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.rails_logger = true
+  end
 end

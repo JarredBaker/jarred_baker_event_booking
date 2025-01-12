@@ -8,19 +8,16 @@ Rails.application.routes.draw do
   }, controllers: {
     sessions: 'users/sessions', as: 'users/sign-in',
     registrations: 'users/registrations',
-    passwords: 'users/passwords',
-    confirmations: 'users/confirmations',
-    unlocks: 'users/unlocks',
   }
 
   authenticated :user do
     root to: 'events#index', as: :authenticated_root
-    resources :events, only: [:new, :create, :index, :show, :destroy] do
+    resources :events, only: [:new, :create, :index, :show] do
       collection do
         get :view_own, as: 'view-own'
       end
     end
-    resources :tickets, only: [:new, :create, :index, :show, :destroy]
+    resources :tickets, only: [:new, :create, :index, :show]
   end
 
   unauthenticated do

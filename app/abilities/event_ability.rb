@@ -6,6 +6,6 @@ class EventAbility
     return unless user.present?
 
     can [:index, :show], Event
-    can [:create, :update, :destroy, :view_own], Event, user_id: user.id
+    can [:create, :update, :view_own], Event, user_id: user.id
   end
 end
