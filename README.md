@@ -89,7 +89,7 @@ Ticket. References user and event.
 - [x] Transaction blocks and SQL level locking.
 
 ## Edge cases:
-- [ ] [Out of scope] Timezones of events. If the user creates it in America and another user views in in Dubai it won't align. The best case scenario is if the event date is scoped to the event locations timezone. 
+- [ ] [Out of scope] Timezones of events. If the user creates it in America and another user views it in Dubai it won't align. The best case scenario is if the event date is scoped to the event locations timezone. 
 - [x] Ensure cached data isn't leaked to the wrong user. If caching bookings we don't want users to access another cache.  
 
 ## Security:
