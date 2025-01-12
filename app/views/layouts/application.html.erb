@@ -17,15 +17,17 @@
       <%= render 'shared/unauthed_nav' %>
     <% end %>
     <div class="absolute top-20 right-2">
-      <div id="ticket-status" data-user-id="<%= user_signed_in? ? current_user.id : '' %>"></div>
-      <div id="ticket-status-message"></div>
-
       <% if notice.present? %>
         <p class="notice alert-info"><%= notice %></p>
       <% end %>
       <% if alert.present? %>
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
+    </div>
+
+    <div  class="absolute top-40 right-2">
+      <div id="ticket-status" data-user-id="<%= user_signed_in? ? current_user.id : '' %>"></div>
+      <div id="ticket-status-message"></div>
     </div>
     <%= yield %>
   </body>

@@ -10,7 +10,6 @@ class TicketsController < ApplicationController
     redirect_to event_path(create_params[:event_id])
   rescue StandardError => e
     flash[:alert] = "Failed to book tickets: #{e.message}"
-    redirect_to event_path(create_params[:event_id])
   end
 
   private
