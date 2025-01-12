@@ -7,6 +7,8 @@ class TicketBookingService
 
   def call
     ActiveRecord::Base.transaction do
+      broadcast_message("success", "Your ticket booking is being processed.")
+
       # Database level lock.
       event = Event.lock.find(@event_id)
       raise StandardError, "Not enough tickets available" if event.tickets_available < @ticket_count
