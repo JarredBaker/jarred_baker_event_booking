@@ -99,3 +99,12 @@ Ticket. References user and event.
 
 ## Gem breakdown:
 
+A short breakdown of important gems.
+
+1. Devise: Authentication. 
+2. CanCanCan: Authorization gem. (Model level)
+3. Geocoder: Longitude and Latitude lookup
+4. Bullet: Query performance. Reduce N+1 queries. 
+5. RackMiniProfiler: Page load performance profiler. 
+
+Please note there are a number of other gems that could be included for performance monitoring, however, I've limited it to the above as they are free.
